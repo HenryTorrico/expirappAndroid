@@ -17,7 +17,7 @@ public class Expirapp extends Application {
         super.onCreate();
         Realm.init(this);RealmConfiguration configuration = new RealmConfiguration.Builder()
                 .allowWritesOnUiThread(true)
-                .name("default.realm")
+                .name("product.realm")
                 .build();
         Realm.setDefaultConfiguration(configuration);
 

@@ -5,5 +5,8 @@ public interface RealmTable {
         String name="name";
         String cant="cant";
         String expirationDate="expirationDate";
+        String threeDaysBefore = "threeDaysBefore";
+        String sevenDaysBefore = "sevenDaysBefore";
+        String fiveDaysBefore = "fiveDaysBefore";
     }
 }

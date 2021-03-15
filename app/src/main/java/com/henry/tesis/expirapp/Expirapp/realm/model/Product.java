@@ -1,5 +1,7 @@
 package com.henry.tesis.expirapp.Expirapp.realm.model;
 
+import androidx.annotation.NonNull;
+
 import java.util.Date;
 
 import io.realm.RealmObject;
@@ -12,21 +14,19 @@ public class Product extends RealmObject {
 
     private int cant;
     private Date expireDate;
+    private Date sevenDaysBefore;
+    private Date fiveDaysBefore;
+    private Date threeDaysBefore;
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", cant=" + cant +
-                ", expireDate=" + expireDate +
-                '}';
-    }
-
-    public Product(String name, int cant, Date expireDate) {
+    public Product(String name, int cant, Date expireDate, Date sevenDaysBefore, Date fiveDaysBefore, Date threeDaysBefore) {
         this.cant=cant;
         this.name = name;
         this.expireDate = expireDate;
+        this.sevenDaysBefore = sevenDaysBefore;
+        this.fiveDaysBefore = fiveDaysBefore;
+        this.threeDaysBefore = threeDaysBefore;
     }
+
     public Product(){
 
     }
@@ -56,4 +56,27 @@ public class Product extends RealmObject {
     }
 
 
+    public Date getSevenDaysBefore() {
+        return sevenDaysBefore;
+    }
+
+    public void setSevenDaysBefore(Date sevenDaysBefore) {
+        this.sevenDaysBefore = sevenDaysBefore;
+    }
+
+    public Date getFiveDaysBefore() {
+        return fiveDaysBefore;
+    }
+
+    public void setFiveDaysBefore(Date fiveDaysBefore) {
+        this.fiveDaysBefore = fiveDaysBefore;
+    }
+
+    public Date getThreeDaysBefore() {
+        return threeDaysBefore;
+    }
+
+    public void setThreeDaysBefore(Date threeDaysBefore) {
+        this.threeDaysBefore = threeDaysBefore;
+    }
 }

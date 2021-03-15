@@ -17,6 +17,7 @@ import com.tfb.fbtoast.FBToast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.function.ToIntFunction;
 import java.util.regex.Pattern;
@@ -143,12 +144,24 @@ public class NewProductActivity extends AppCompatActivity {
                         try {
                             Date date = new SimpleDateFormat("dd/MM/yyyy").parse(expireString);
                             product.setExpireDate(date);
+                            Calendar calendar7Days = Calendar.getInstance();
+                            Calendar calendar5Days = Calendar.getInstance();
+                            Calendar calendar3Days = Calendar.getInstance();
+                            calendar7Days.setTime(date);
+                            calendar7Days.add(Calendar.DAY_OF_YEAR, -7);
+                            Date sevenDays = calendar7Days.getTime();
+                            calendar5Days.setTime(date);
+                            calendar5Days.add(Calendar.DAY_OF_YEAR,-5);
+                            Date fiveDays =calendar5Days.getTime();
+                            calendar3Days.setTime(date);
+                            calendar3Days.add(Calendar.DAY_OF_YEAR,-3);
+                            Date threeDays =calendar3Days.getTime();
+                            product.setThreeDaysBefore(threeDays);
+                            product.setFiveDaysBefore(fiveDays);
+                            product.setSevenDaysBefore(sevenDays);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
-
-
-
                     }
                 },
                 new Realm.Transaction.OnSuccess() {

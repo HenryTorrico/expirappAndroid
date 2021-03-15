@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="397dp"
+        android:layout_height="170dp">
+
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre: "
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/product_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="Producto"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            app:layout_constraintStart_toEndOf="@+id/nombre"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fechaCad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="Fecha Caducidad: "
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/cant"
+            app:layout_constraintEnd_toStartOf="@+id/expire_text_view"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nombre"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/expire_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cant_text_view"
+            android:layout_marginBottom="56dp"
+            android:fontFamily="monospace"
+            android:text="Fecha Caducidad"
+            android:textSize="18sp"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toTopOf="@+id/cant_text_view"
+            app:layout_constraintEnd_toStartOf="@+id/rest_days"
+            app:layout_constraintTop_toBottomOf="@+id/product_text_view"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/rest_days"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Dias Restantes"
+            android:textSize="36sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad: "
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/cant_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:fontFamily="monospace"
+            android:text="Cantidad"
+            android:textSize="18sp"
+            android:typeface="monospace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cant" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.henry.tesis.expirapp.Expirapp.activity.ProductFragment;
+import com.henry.tesis.expirapp.Expirapp.activity.ProxToExpireFragment;
 
 public class ExpirappFragmentPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 2;
@@ -25,7 +26,15 @@ public class ExpirappFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return ProductFragment.newInstance(position + 1);
+        System.out.println("position"+position);
+        switch (position) {
+            case 0:
+                return ProductFragment.newInstance(position);
+            case 1:
+                return ProxToExpireFragment.newInstance(position);
+            default:
+                return null;
+        }
     }
 
     @Override

@@ -19,6 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.henry.tesis.expirapp.Expirapp.R;
 import com.henry.tesis.expirapp.Expirapp.realm.model.Product;
 import com.henry.tesis.expirapp.Expirapp.utils.ProductRecyclerView;
+import com.henry.tesis.expirapp.Expirapp.utils.ProxToExpireRecyclerView;
 
 import java.util.List;
 
